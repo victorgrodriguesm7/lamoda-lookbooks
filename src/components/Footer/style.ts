@@ -8,6 +8,10 @@ export const Container = styled.div`
     padding: 1rem 10%;
 
     background: ${({ theme }) => theme.colors.black};
+    
+    @media (max-width: 700px){
+        justify-content: center;
+    }
 `;
 
 export const Logo = styled.img``;
@@ -17,6 +21,10 @@ export const LinkContainer = styled.div`
     align-items: center;
 
     gap: 2rem;
+
+    @media (max-width: 700px){
+        display: none;
+    }
 `;
 
 export const Link = styled.a`
