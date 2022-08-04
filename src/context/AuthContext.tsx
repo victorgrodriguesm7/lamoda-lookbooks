@@ -34,11 +34,12 @@ const AuthProvider = ({ children }: Props) => {
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
             setUser(user ?? undefined);
+            user && setLogged(true);
             setLoading(false);
         });
 
         return unsubscribe;
-    });
+    }, []);
 
     function handleLogin(email: string, pass: string){
         return new Promise((resolve, reject) => {
